@@ -14,9 +14,11 @@ spec:
       labels:
         app: vprodb
     spec:
+      imagePullSecrets:
+      - name: harbor-registry
       containers:
       - name: vprodb
-        image: 3booda24/vprofiledb
+        image: harbor.pr1/docker_build/my-db:latest
         ports:
         - name: vprodb-port
           containerPort: 3306
