@@ -14,9 +14,11 @@ spec:
       labels:
         app: vproapp
     spec:
+      imagePullSecrets:
+      - name: harbor-registry
       containers:
-      - name: vproapp
-        image: 3booda24/vprofileapp
+      - name: my-app
+        image: harbor.pr1/docker_build/my-app:latest
         ports:
         - name: vproapp-port
           containerPort: 8080
